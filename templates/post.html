@@ -50,11 +50,12 @@
             <!-- Show all comments -->
             {% for comment in post.comments: %}
             <li>
-              <div class="commenterImage">
-                <img
-                  src="{{ comment.comment_author.email | gravatar }}"
-                />
-              </div>
+                <div class="commenterImage">
+                  <img
+                        src="https://ui-avatars.com/api/?name={{ comment.comment_author.name | urlencode }}"
+                        alt="User avatar"
+                  />
+                </div>
               <div class="commentText">
                 {{comment.text|safe}}
                 <span class="sub-text">{{comment.comment_author.name}}</span>
